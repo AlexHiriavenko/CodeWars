@@ -9,6 +9,7 @@ function getNumbers(numbers, target) {
 
         for (let i = index; i < numbers.length; i++) {
             const num = numbers[i];
+            console.log(`numbers[]i: ${num}`);
             // Проверяем каждое число num. Если num меньше или равно текущему target,
             // функция пытается найти комбинацию для target - num начиная с индекса i.
             if (num <= target) {
@@ -17,6 +18,8 @@ function getNumbers(numbers, target) {
                 // которые дадут оставшуюся сумму target - num.
                 // Результат сохраняется в remainderNumbers.
                 const remainderNumbers = findNumbers(target - num, i);
+                console.log(`target - num: ${target - num}`);
+                console.log(remainderNumbers);
                 if (remainderNumbers !== null) {
                     return [num, ...remainderNumbers];
                 }
@@ -31,7 +34,7 @@ function getNumbers(numbers, target) {
 }
 
 const numbers = [100, 25, 15, 7, 3];
-console.log(getNumbers(numbers, 24)); // Output: [15, 3, 3, 3]
+// console.log(getNumbers(numbers, 24)); // Output: [15, 3, 3, 3]
 console.log(getNumbers(numbers, 53)); // Output: [25, 25, 3]
-console.log(getNumbers(numbers, 35)); // Output: [25, 7, 3]
-console.log(getNumbers(numbers, 4)); // Output: []
+// console.log(getNumbers(numbers, 35)); // Output: [25, 7, 3]
+// console.log(getNumbers(numbers, 4)); // Output: []
