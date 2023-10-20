@@ -21,9 +21,9 @@ function reduce(fraction) {
 
 console.log(reduce(tuple));
 
-const gcd = (a, b) => (b ? gcd(b, a % b) : a); // [3, 8]
-
 ///////////////////
+
+const gcd = (a, b) => (b ? gcd(b, a % b) : a); // [3, 8]
 
 function reduce2(fraction) {
     const divisor = gcd(...fraction);
